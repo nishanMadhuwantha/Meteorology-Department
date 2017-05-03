@@ -1,0 +1,31 @@
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.main"><i class="icon-speedometer"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.synopsis"><i class="fa fa-pencil-square-o"></i> Synopsis</a>
+            </li>
+            <li class="nav-item " ng-show="role=='admin'">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.addWeatherS"><i class="fa fa-pencil-square-o"></i> Add Weather Station</a>
+            </li>
+            <li class="nav-item" ng-show="role=='admin'">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.register"><i class="fa fa-user-plus"></i> Register</a>
+            </li>
+            <li class="nav-item" ng-show="role=='admin' || role=='officer'">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.viewUser"><i class="fa fa-users"></i> View Users</a>
+            </li>
+            <li class="nav-item" ng-show="role=='admin' || role=='officer'">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.viewRecord"><i class="fa fa-newspaper-o"></i> View Record</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.charts"><i class="fa fa-line-chart"></i> Charts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.map"><i class="fa fa-map-marker"></i> View Map</a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>

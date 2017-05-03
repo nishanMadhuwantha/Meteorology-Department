@@ -1,0 +1,45 @@
+<div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Add Weather Station</strong> Form
+                </div>
+                <div class="card-block">
+                    <form name="wsform" novalidate>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">Weather station name:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="wsnane" name="wsnane" ng-model="user.wsname" class="form-control" placeholder="Weather station name" required>
+                                <span style="color:red" ng-show="wsform.wsnane.$dirty && wsform.wsnane.$error.required">Weather station name is required</span>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label class="col-md-3 form-control-label">Weather station ID:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="wsid" name="wsid" ng-model="user.wsid" class="form-control" placeholder="Weather station ID" required>
+                                <span style="color:red" ng-show="wsform.wsid.$dirty && wsform.wsid.$error.required">Weather station id is required</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">Insert Latitude:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="wslatitude" name="wslatitude" ng-model="user.wslatitude" class="form-control" placeholder="Insert Latitude" required>
+                                <span style="color:red" ng-show="wsform.wslatitude.$dirty && wsform.wslatitude.$error.required">Weather station latitude is required</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">Insert Longitude:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="wslongitude" name="wslongitude" ng-model="user.wslongitude" class="form-control" placeholder="Insert Longitude" required>
+                                <span style="color:red" ng-show="wsform.wslongitude.$dirty && wsform.wslongitude.$error.required">Weather station longitude is required</span>
+                            </div>
+                        </div>
+                    
+                    <div class="card-footer">
+                        <button type="submit" ng-click="create()" ng-disabled="wsform.$invalid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Create</button>
+                    
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        

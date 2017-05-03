@@ -1,0 +1,33 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
+    <a class="navbar-brand" ui-sref="app.main"></a>
+    <ul class="nav navbar-nav hidden-md-down">
+        <li class="nav-item">
+            <a class="nav-link navbar-toggler sidebar-toggler" href="#">&#9776;</a>
+        </li>
+        <li class="nav-item px-1">
+            <a class="nav-link">DEPARTMENT OF METOROLOGY SRI LANKA</a>
+        </li>
+          
+    </ul>
+  
+    <ul class="nav navbar-nav ml-auto hidden-md-down">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="hidden-md-down">{{user.fname}}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                <a class="dropdown-item" ui-sref="app.profile"><i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" ng-click="logout()" ><i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+        <li class="nav-item">
+
+        </li>
+
+    </ul>
+</header>

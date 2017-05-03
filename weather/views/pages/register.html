@@ -1,0 +1,123 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-11">
+                <div class="card mx-2">
+                    <div class="card-block p-2">
+                        <form  name="signUpF" novalidate>
+                        <div class="col-md-12">
+                            <h1>Register</h1>
+                            <p class="text-muted">Add a new user</p>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">First Name : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input type="text" class="form-control" ng-model="user.fname" name="fname" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-12">
+                                <span style="color:red" ng-show="signUpF.fname.$dirty && signUpF.fname.$error.required">User first name is required</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Last Name : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input type="text" class="form-control"  ng-model="user.lname" name="lname"  placeholder="Last Name" required>
+                            </div>
+                            <div class="col-md-12">
+                                <span style="color:red" ng-show="signUpF.lname.$dirty && signUpF.lname.$error.required">User last name is required</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Gender : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="fa fa-venus-mars"></i></span>
+                                <select id="selectGender" name="select"  ng-model="user.gender"  class="form-control" size="1" required>
+                                    <option value="0">Please select Your Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">NIC : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input type="text" class="form-control"  ng-model="user.nic" name="nic"  placeholder="NIC" required>
+                            </div>
+                            <div class="col-md-12">
+                                <span style="color:red" ng-show="signUpF.nic.$dirty && signUpF.nic.$error.required">User nic is required</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                             <label class="mb-1 form-control-label text-primary" for="select">Username : </label>
+                             <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input type="text" class="form-control" ng-model="user.username" name="username" placeholder="User Name" required>
+                            </div>
+                                <div class="col-md-12">
+                                    <span style="color:red" ng-show="signUpF.username.$dirty && signUpF.username.$error.required">User name is required</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Password : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-lock"></i>
+                                </span>
+                                <input type="password" class="form-control"  ng-model="user.password" id="psw" name="psw" placeholder="Password" ng-minlength="4"  ng-maxlength="14" required>
+                            </div>
+                                <div class="col-md-12">
+                                    <span style="color:red" ng-show="signUpF.psw.$dirty && signUpF.psw.$error.required">Password is required</span>
+                                    <span style="color:red" ng-show="signUpF.psw.$dirty && signUpF.psw.$error.password">Invalid password</span>
+                                    <span style="color:red" ng-show="signUpF.psw.$dirty && signUpF.psw.$error.minlength">Too short</span>
+                                   <span style="color:red" ng-show="signUpF.psw.$dirty && signUpF.psw.$error.maxlength">Too long</span>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Confirm Password : </label>
+                            <div class="input-group mb-2">
+                                <span class="input-group-addon"><i class="icon-lock"></i>
+                                </span>
+                                <input type="password" class="form-control"  ng-model="user.rpassword" id="rpsw" name="rpsw"  placeholder="Repeat password" required>
+                            </div>
+                                <div class="col-md-12">
+                                    <div ng-show="(signUpF.psw.$dirty && signUpF.rpsw.$dirty) && (user.password != user.rpassword)"><span style="color:red">Password is not equal</span></div>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Weather Station : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                <input type="text" class="form-control"  ng-model="user.station" name="station" placeholder="Station" required>
+                            </div>
+                                <div class="col-md-12">
+                                    <span style="color:red" ng-show="signUpF.station.$dirty && signUpF.station.$error.required">User work station is required</span>
+                                </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="mb-1 form-control-label text-primary" for="select">Role : </label>
+                            <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                <select id="select" name="select"  ng-model="user.role"  class="form-control" size="1" required>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Officer">Officer</option>
+                                    <option value="Observer">Observer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" ng-click="register()" ng-disabled="signUpF.$invalid" class="btn btn-block btn-primary">Create Account</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

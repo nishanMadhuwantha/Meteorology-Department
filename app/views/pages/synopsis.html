@@ -1,0 +1,38 @@
+<div class="animated fadeIn">
+  
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                
+                <div class="card-block ">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal " name="synop" novalidate>
+                        
+                        <div class="form-group row">
+                            <label class="col-md-2 form-control-label vcenter">Enter the Synopsis</label>
+                            <div class="col-md-10" >
+                                
+                                <input type="text" ng-model="user.synopsis" rows="9" id="synopsis" name="synopsis" class="form-control" placeholder="Synopsis" ng-maxlength="47" ng-minlength="47" required>
+                                <span style="color:red" ng-show="synop.synopsis.$dirty && synop.synopsis.$error.required">Synopsis is required</span>
+					           <span style="color:red" ng-show="synop.synopsis.$dirty && synop.synopsis.$error.maxlength">Synopsis too long</span>
+                                
+                            </div>
+                        </div>
+                   
+                            <div class="col-6">
+                                    <button ng-click="submit()" type="button" ng-disabled="synop.$invalid" class="btn btn-primary px-2">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <script>
+                document.getElementById('synopsis').addEventListener('input', function (e) {
+                var target = e.target, position = target.selectionEnd, length = target.value.length;
+                target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{5})/g, '$1 ').trim();
+                target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0)});
+            </script>
+        <!--/.col-->
+
+    </div>
+    <!--/.row-->
+</div>
